@@ -1,20 +1,22 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Platform, SafeAreaView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import OnBoards from './src/screens/onBoards/OnBoards';
 
 export default function App() {
+  const Stack = createStackNavigator();
   return (
-    <View style={styles.container}>
-      <Text>TNPC</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={{flex: 1,padding:0,marginTop:50}} >
+       <StatusBar style='auto'/>
+    <NavigationContainer>
+      <OnBoards/>
+    
+  </NavigationContainer>
+  </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
