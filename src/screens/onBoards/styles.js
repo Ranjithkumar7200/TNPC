@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
   },
-  buttonText: {
+  text: {
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    marginVertical: 60,
+    marginVertical: 30, // Adjusted margin for responsiveness
   },
   skipContainer: {
     alignItems: "center",
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   titleContainer: {
     display: "flex",
     flexDirection: "row",
-    marginBottom: 10, // Optional: Add margin bottom for spacing
+    marginBottom: 10,
   },
   arrowIcon: {
     marginRight: 5,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     color: "#8A2BE2",
     fontWeight: "bold",
-    fontFamily: "IbarraRealNova-Bold",
+    fontFamily: "IbarraRealNova-Regular",
     marginRight: 30,
   },
   descriptionContainer: {
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     fontSize: 25,
-    fontFamily: "IbarraRealNova-Bold",
+    fontFamily: "IbarraRealNova-Regular",
   },
   description: {
     fontSize: 16,
@@ -70,9 +70,10 @@ const styles = StyleSheet.create({
     lineHeight: 30,
   },
   firstLetter: {
-    fontSize: 24, // Adjust the font size as needed
+    fontSize: 24,
     fontWeight: "bold",
-    color: "#000000", // Adjust the color as needed
+    color: "#000000",
   },
 });
+
 export default styles;
