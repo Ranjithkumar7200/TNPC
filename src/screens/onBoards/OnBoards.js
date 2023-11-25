@@ -3,33 +3,14 @@ import { View, Text, Image } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import { MaterialIcons } from "@expo/vector-icons";
 import { slider } from "./Slider";
-import { useEffect, useRef, useState } from "react";
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import { useNavigation } from '@react-navigation/native';
+import { useRef, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import styles from "./styles";
 
 const OnBoards = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const navigation = useNavigation();
   const sliderRef = useRef(null);
-  const [fontsLoaded] = useFonts({
-    "IbarraRealNova-Regular": require("../../assets/fonts/IbarraRealNova-Regular.ttf"),
-    "Petrona-Regular": require("../../assets/fonts/Petrona-Regular.ttf"),
-  });
-
-  useEffect(() => {
-    async function prepare() {
-      await SplashScreen.preventAutoHideAsync();
-    }
-    prepare();
-  }, []);
-
-  if (!fontsLoaded) {
-    return <Text>Loading fonts...</Text>;
-  } else {
-    SplashScreen.hideAsync();
-  }
 
   const handleNext = (title) => (
     <View style={styles.button}>
@@ -52,7 +33,9 @@ const OnBoards = () => {
 
   const handleGetStart = (title) => (
     <View style={styles.button}>
-      <Text onPress={() => navigation.navigate('Login')} style={styles.text}>{title}</Text>
+      <Text onPress={() => navigation.navigate("Login")} style={styles.text}>
+        {title}
+      </Text>
     </View>
   );
 
@@ -67,7 +50,9 @@ const OnBoards = () => {
         data={slider}
         renderItem={({ item }) => (
           <View style={styles.slideContainer}>
-            {item.subTitle && <Text style={styles.subTitle}>{item.subTitle}</Text>}
+            {item.subTitle && (
+              <Text style={styles.subTitle}>{item.subTitle}</Text>
+            )}
             {!item.title1 ? (
               <View style={styles.titleContainer}>
                 <MaterialIcons

@@ -1,9 +1,7 @@
-import { useFonts } from "expo-font";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { TextInput, TouchableOpacity } from "react-native";
 import { Text, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
-import * as SplashScreen from "expo-splash-screen";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./styles";
 import { LoginSchema } from "./LoginSchema";
@@ -15,32 +13,15 @@ const Login = () => {
   const navigation = useNavigation();
 
   const [showPassword, setShowPassword] = useState(false);
-  const [fontsLoaded] = useFonts({
-    "Petrona-Bold": require("../../assets/fonts/Petrona-Bold.ttf"),
-    "Petrona-Regular": require("../../assets/fonts/Petrona-Regular.ttf"),
-    "Petrona-Medium": require("../../assets/fonts/Petrona-Medium.ttf"),
-  });
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  useEffect(() => {
-    async function prepare() {
-      await SplashScreen.preventAutoHideAsync();
-    }
-    prepare();
-  }, []);
-
-  if (!fontsLoaded) {
-    return <Text>Loading fonts...</Text>;
-  } else {
-    SplashScreen.hideAsync();
-  }
-
   const handleLogin = () => {
     console.log(email);
     console.log(password);
-    navigation.navigate('BottomTabs')
+    navigation.navigate("BottomTabs");
   };
   return (
     <Formik

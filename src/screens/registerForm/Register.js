@@ -1,9 +1,7 @@
-import { useFonts } from "expo-font";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Image, TextInput, TouchableOpacity } from "react-native";
 import { Text, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
-import * as SplashScreen from "expo-splash-screen";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./styles";
 import { Formik } from "formik";
@@ -17,30 +15,12 @@ const Register = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigation = useNavigation();
 
-  const [fontsLoaded] = useFonts({
-    "Petrona-Bold": require("../../assets/fonts/Petrona-Bold.ttf"),
-    "Petrona-Regular": require("../../assets/fonts/Petrona-Regular.ttf"),
-    "Petrona-Medium": require("../../assets/fonts/Petrona-Medium.ttf"),
-  });
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
   const toggleConfirmPasswordVisibility = () => {
     setShowConfirmPassword(!showConfirmPassword);
   };
-
-  useEffect(() => {
-    async function prepare() {
-      await SplashScreen.preventAutoHideAsync();
-    }
-    prepare();
-  }, []);
-
-  if (!fontsLoaded) {
-    return <Text>Loading fonts...</Text>;
-  } else {
-    SplashScreen.hideAsync();
-  }
 
   const handleRegister = () => {
     console.log(email);
@@ -123,7 +103,11 @@ const Register = () => {
                   </TouchableOpacity>
                 </View>
                 {touched.password && errors.password && (
-                  <Text numberOfLines={2} ellipsizeMode="middle" style={styles.Passwordvalidation}>
+                  <Text
+                    numberOfLines={2}
+                    ellipsizeMode="middle"
+                    style={styles.Passwordvalidation}
+                  >
                     {errors.password}
                   </Text>
                 )}
@@ -172,16 +156,19 @@ const Register = () => {
               </View>
             </View>
             <View>
-              <TouchableOpacity style={styles.button} onPress={
+              <TouchableOpacity
+                style={styles.button}
+                onPress={
                   email === "" ||
                   password === "" ||
-                  confirmPassword===""||
+                  confirmPassword === "" ||
                   (touched.email && errors.email) ||
-                  (touched.password && errors.password)||
+                  (touched.password && errors.password) ||
                   (touched.confirmPassword && errors.confirmPassword)
                     ? handleSubmit
                     : handleRegister
-                }>
+                }
+              >
                 <Text style={styles.buttonLabel}>Create an account</Text>
               </TouchableOpacity>
             </View>
