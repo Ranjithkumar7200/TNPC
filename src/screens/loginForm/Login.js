@@ -40,6 +40,7 @@ const Login = () => {
   const handleLogin = () => {
     console.log(email);
     console.log(password);
+    navigation.navigate('BottomTabs')
   };
   return (
     <Formik
