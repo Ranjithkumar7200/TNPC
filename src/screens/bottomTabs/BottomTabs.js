@@ -4,12 +4,12 @@ import { AntDesign, Feather } from "@expo/vector-icons"; // Importing icons
 import Home from "../home/Home";
 import Profile from "../profile/Profile";
 import Transaction from "../transaction/Transaction";
-import { TouchableOpacity } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const BottomTabs = () => {
   const Tab = createBottomTabNavigator();
-const navigation = useNavigation()
+  const navigation = useNavigation();
   return (
     <Tab.Navigator
       sceneContainerStyle={{
@@ -21,10 +21,10 @@ const navigation = useNavigation()
         tabBarShowLabel: false,
         tabBarStyle: [
           {
-            display: "flex"
+            display: "flex",
           },
-          null
-        ]
+          null,
+        ],
       }}
     >
       <Tab.Screen
@@ -42,26 +42,25 @@ const navigation = useNavigation()
         name="All Transations"
         component={Transaction}
         options={{
-          
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="swap" color={color} size={size + 5} />
           ),
           headerLeft: () => (
             <TouchableOpacity onPress={() => navigation.goBack()}>
               <AntDesign
-              name="arrowleft"
-              size={26}
-              color="black"
-              style={{ marginLeft: 10 }}
-            />
+                name="arrowleft"
+                size={26}
+                color="black"
+                style={{ marginLeft: 10 }}
+              />
             </TouchableOpacity>
           ),
-          headerTitleStyle:{
-            fontFamily:'Petrona-Bold',
-            fontSize:26,
-            alignItems:'center',
-            justifyContent:'center'
-          }
+          headerTitleStyle: {
+            fontFamily: "Petrona-Bold",
+            fontSize: 26,
+            alignItems: "center",
+            justifyContent: "center",
+          },
         }}
       />
       <Tab.Screen
@@ -71,11 +70,45 @@ const navigation = useNavigation()
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="user" color={color} size={size + 5} />
           ),
-          headerShown: false,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <AntDesign
+                name="arrowleft"
+                size={26}
+                color="black"
+                style={{ marginLeft: 10 }}
+              />
+            </TouchableOpacity>
+          ),
+          headerRight: () => (
+            <TouchableOpacity>
+              <View style={styles.edit}>
+                <Text style={styles.editText}>Edit</Text>
+              </View>
+            </TouchableOpacity>
+          ),
+          headerTitleStyle: {
+            display: "none",
+          },
         }}
       />
     </Tab.Navigator>
   );
 };
-
+const styles = StyleSheet.create({
+  edit:{
+    width:47,
+    height:26,
+    backgroundColor:'#8A2BE2',
+    alignItems:'center',
+    justifyContent:'center',
+    marginHorizontal:20,
+    borderRadius:6
+  },
+  editText:{
+    fontFamily:'Petrona-Medium',
+    fontSize:12,
+    color:'#FFFFFF'
+  }
+})
 export default BottomTabs;
