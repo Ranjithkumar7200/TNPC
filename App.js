@@ -40,18 +40,16 @@ export default function App() {
         }}
       >
         <Stack.Navigator>
-        
-          <Stack.Screen
-            name="OnBoardStack"
-            options={{ headerShown: false }}
-            component={OnBoardStack}
-          />
           <Stack.Screen
             name="BottomTabs"
             options={{ headerShown: false }}
             component={BottomTabs}
           />
-          
+          <Stack.Screen
+            name="OnBoardStack"
+            options={{ headerShown: false }}
+            component={OnBoardStack}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

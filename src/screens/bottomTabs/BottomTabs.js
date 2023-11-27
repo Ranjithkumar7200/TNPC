@@ -4,25 +4,27 @@ import { AntDesign, Feather } from "@expo/vector-icons"; // Importing icons
 import Home from "../home/Home";
 import Profile from "../profile/Profile";
 import Transaction from "../transaction/Transaction";
+import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const BottomTabs = () => {
   const Tab = createBottomTabNavigator();
-
+const navigation = useNavigation()
   return (
     <Tab.Navigator
       sceneContainerStyle={{
         backgroundColor: "#fff",
       }}
-      tabBarOptions={{
-        showLabel: false,
-        activeTintColor: "#8A2BE2",
-        inactiveTintColor: "gray",
-        style: {
-          backgroundColor: "#fff",
-          borderTopWidth: 1,
-          borderTopColor: "#E6E6FA",
-          borderRadius: 20,
-        },
+      screenOptions={{
+        tabBarActiveTintColor: "#8A2BE2",
+        tabBarInactiveTintColor: "gray",
+        tabBarShowLabel: false,
+        tabBarStyle: [
+          {
+            display: "flex"
+          },
+          null
+        ]
       }}
     >
       <Tab.Screen
@@ -37,13 +39,29 @@ const BottomTabs = () => {
       />
 
       <Tab.Screen
-        name="Transation"
+        name="All Transations"
         component={Transaction}
         options={{
+          
           tabBarIcon: ({ color, size }) => (
             <AntDesign name="swap" color={color} size={size + 5} />
           ),
-          headerShown: false,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <AntDesign
+              name="arrowleft"
+              size={26}
+              color="black"
+              style={{ marginLeft: 10 }}
+            />
+            </TouchableOpacity>
+          ),
+          headerTitleStyle:{
+            fontFamily:'Petrona-Bold',
+            fontSize:26,
+            alignItems:'center',
+            justifyContent:'center'
+          }
         }}
       />
       <Tab.Screen
