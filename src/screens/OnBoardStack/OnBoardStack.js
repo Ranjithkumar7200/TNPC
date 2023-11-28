@@ -27,6 +27,11 @@ return(
           name="Register"
           component={Register}
           options={{ headerShown: false }} />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            
+          />
         </Stack.Navigator>
   )};
 
