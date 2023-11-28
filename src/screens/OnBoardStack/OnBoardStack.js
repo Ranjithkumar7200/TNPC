@@ -5,34 +5,31 @@ import Register from "../registerForm/Register";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const OnBoardStack = () => {
-    const Stack = createStackNavigator();
+  const Stack = createStackNavigator();
 
-return(
+  return (
     <Stack.Navigator
-          screenOptions={{
-            cardStyle: { backgroundColor: "white" },
-          }}
-        >
-          <Stack.Screen
-            name="OnBoards"
-            component={OnBoards}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="Login"
-            component={Login}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-          name="Register"
-          component={Register}
-          options={{ headerShown: false }} />
-          <Stack.Screen
-            name="Login"
-            component={Login}
-            
-          />
-        </Stack.Navigator>
-  )};
+      screenOptions={{
+        cardStyle: { backgroundColor: "white" },
+      }}
+    >
+      <Stack.Screen
+        name="OnBoards"
+        component={OnBoards}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Register"
+        component={Register}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  );
+};
 
-  export default OnBoardStack;
+export default OnBoardStack;

@@ -1,12 +1,20 @@
 import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { SafeAreaView, Text } from "react-native";
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
 import OnBoardStack from "./src/screens/OnBoardStack/OnBoardStack";
 import { createStackNavigator } from "@react-navigation/stack";
 import BottomTabs from "./src/screens/bottomTabs/BottomTabs";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import Notes from "./src/screens/notes/Notes";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -32,14 +40,18 @@ export default function App() {
     SplashScreen.hideAsync();
   }
   return (
-    <SafeAreaView style={{ flex: 1, padding: 0, marginTop: 50 }}>
+    <SafeAreaView style={{ flex: 1, padding: 0 }}>
       <StatusBar style="auto" />
       <NavigationContainer
         screenOptions={{
-          cardStyle: { backgroundColor: "white" },
+          cardStyle: { backgroundColor: "#fff" },
         }}
       >
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            cardStyle: { backgroundColor: "#fff" },
+          }}
+        >
           <Stack.Screen
             name="BottomTabs"
             options={{ headerShown: false }}
@@ -50,8 +62,47 @@ export default function App() {
             options={{ headerShown: false }}
             component={OnBoardStack}
           />
+          <Stack.Screen
+            name="Notes"
+            component={Notes}
+            options={{
+              headerTitleAlign: "center",
+
+              headerRight: () => (
+                <TouchableOpacity>
+                  <View style={styles.add}>
+                    <View>
+                      <Ionicons name="add" size={20} color="#fff" />
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              ),
+              headerTitleStyle: {
+                fontFamily: "Petrona-Bold",
+                fontSize: 26,
+                alignItems: "center",
+                justifyContent: "center",
+              },
+              headerStyle: {
+                backgroundColor: "#fff",
+              },
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  add: {
+    width: 20,
+    height: 20,
+    backgroundColor: "#8A2BE2",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    borderRadius: 10,
+    marginHorizontal: 10,
+  },
+});
