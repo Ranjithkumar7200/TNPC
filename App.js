@@ -15,6 +15,7 @@ import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import Notes from "./src/screens/notes/Notes";
 import { Ionicons } from "@expo/vector-icons";
+import Notification from "./src/screens/notifications/Notification";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -54,7 +55,7 @@ export default function App() {
         >
           <Stack.Screen
             name="BottomTabs"
-            options={{ headerShown: false }}
+            options={{ headerShown: false }}  
             component={BottomTabs}
           />
           <Stack.Screen
@@ -88,6 +89,32 @@ export default function App() {
               },
             }}
           />
+          <Stack.Screen
+            name="Notifications"
+            component={Notification}
+            options={{
+              headerTitleAlign: "center",
+
+              headerRight: () => (
+                <TouchableOpacity>
+                  <View >
+                    <View style={styles.setting}>
+                      <Ionicons name="settings-outline" size={20} color="#000000" />
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              ),
+              headerTitleStyle: {
+                fontFamily: "Petrona-Bold",
+                fontSize: 26,
+                alignItems: "center",
+                justifyContent: "center",
+              },
+              headerStyle: {
+                backgroundColor: "#fff",
+              },
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
@@ -105,4 +132,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 10,
   },
+  setting:{
+    alignItems: "center",
+    justifyContent: "center",
+    marginHorizontal: 10,
+
+  }
 });

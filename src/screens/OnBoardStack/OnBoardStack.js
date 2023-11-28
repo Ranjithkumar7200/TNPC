@@ -11,12 +11,13 @@ const OnBoardStack = () => {
     <Stack.Navigator
       screenOptions={{
         cardStyle: { backgroundColor: "white" },
+        
       }}
     >
       <Stack.Screen
         name="OnBoards"
         component={OnBoards}
-        options={{ headerShown: false }}
+        options={{ headerShown: false ,}}
       />
       <Stack.Screen
         name="Login"

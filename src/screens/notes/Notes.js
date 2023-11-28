@@ -13,12 +13,12 @@ const Notes = () => {
           const color = isEvenIndex ? "#8A2BE2" : "#E6E6FA";
           return (
             <>
-              <View style={[styles.notes, { backgroundColor }]}>
+              <View style={[styles.notes, { backgroundColor }]} key={outerIndex}>
                 <View style={styles.notesContainer}>
                   {items.note.map((notes, index) => {
                     return (
                       <>
-                        <Text style={[styles.notesText, { color }]}>
+                        <Text style={[styles.notesText, { color }]} key={index}>
                           {index + 1 + " . " + notes}
                         </Text>
                       </>

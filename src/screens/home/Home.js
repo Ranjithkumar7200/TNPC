@@ -21,6 +21,7 @@ const Home = () => {
             TNPSC <Text style={styles.masterText}>Master</Text>
           </Text>
         </View>
+        <TouchableOpacity onPress={()=>navigate.navigate("Notifications")}>
         <View>
           <MaterialIcons
             name="notifications-active"
@@ -28,6 +29,7 @@ const Home = () => {
             color="#8A2BE2"
           />
         </View>
+        </TouchableOpacity>
       </View>
       <View>
         <View style={styles.carousel}>

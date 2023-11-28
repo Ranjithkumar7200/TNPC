@@ -5,7 +5,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { slider } from "./Slider";
 import { useRef, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import styles from "./styles";
+import {styles} from "./styles";
 
 const OnBoards = () => {
   const [activeIndex, setActiveIndex] = useState(0);
