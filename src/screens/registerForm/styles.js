@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { color } from "../../constants/Constants";
+import { color, fonts } from "../../constants/Constants";
 
 const styles = StyleSheet.create({
     container: {
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
     labelText: {
       alignItems: "center",
-      fontFamily: "Petrona-Regular",
+      fontFamily: fonts.Petrona.regular,
       fontSize: 12,
     },
     button: {
@@ -48,18 +48,18 @@ const styles = StyleSheet.create({
     buttonLabel: {
       color: "#FFFFFF",
       fontSize: 14,
-      fontFamily: "Petrona-Medium",
+      fontFamily: fonts.Petrona.medium,
     },
     headerContainer: {
       marginVertical: 20,
     },
     header: {
       fontSize: 26,
-      fontFamily: "Petrona-Bold",
+      fontFamily: fonts.Petrona.bold,
       color: "#000000",
     },
     loginText: {
-      fontFamily: "Petrona-Regular",
+      fontFamily: fonts.Petrona.regular,
       fontSize: 12,
       marginVertical: 30,
     },
@@ -80,12 +80,12 @@ const styles = StyleSheet.create({
       justifyContent:'center'
     },
     googleText:{
-      fontFamily:'Petrona-Regular',
+      fontFamily:fonts.Petrona.regular,
       fontSize:12,
       alignItems:'center',
     },
     orText:{
-      fontFamily:'Petrona-Regular',
+      fontFamily:fonts.Petrona.regular,
       marginVertical:10,
       fontSize:12,
   

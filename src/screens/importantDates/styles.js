@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { color, screenWidth } from "../../constants/Constants";
+import { color, fonts, screenWidth } from "../../constants/Constants";
 
 export const styles = StyleSheet.create({
     scrollviewContainer: {
@@ -13,21 +13,18 @@ export const styles = StyleSheet.create({
       marginVertical:10
     },
     textRegular: {
-      fontFamily: "Petrona-Regular",
+      fontFamily: fonts.Petrona.semiBold,
       fontSize: 10,
       marginVertical: 5,
     },
     textMedium: {
-      fontFamily: "Petrona-Medium",
+      fontFamily: fonts.Petrona.medium,
       fontSize: 10,
       marginVertical: 5,
     },
-    textMixed: {
-      fontFamily: "Petrona-Mixed",
-      fontSize: 10,
-    },
+   
     textBold: {
-      fontFamily: "Petrona-Bold",
+      fontFamily: fonts.Petrona.bold,
       fontSize: 18,
       color: "#fff",
     },
@@ -67,7 +64,7 @@ export const styles = StyleSheet.create({
       alignItems: "flex-end",
     },
     number: {
-      fontFamily: "Petrona-SemiBold",
+      fontFamily: fonts.Petrona.semiBold,
       fontSize: 10,
       color: color.primary,
     },
@@ -84,7 +81,7 @@ export const styles = StyleSheet.create({
       borderRadius: 6,
     },
     moreText: {
-      fontFamily: "Petrona-Medium",
+      fontFamily:fonts.Petrona.medium,
       fontSize: 6,
       color: "#fff",
       padding: 5,

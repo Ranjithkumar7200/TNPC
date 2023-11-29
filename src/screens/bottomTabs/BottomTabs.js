@@ -6,7 +6,7 @@ import Profile from "../profile/Profile";
 import Transaction from "../transaction/Transaction";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import {color} from '../../constants/Constants'
+import {color, fonts} from '../../constants/Constants'
 const BottomTabs = () => {
   const Tab = createBottomTabNavigator();
   const navigation = useNavigation();
@@ -56,7 +56,7 @@ const BottomTabs = () => {
             </TouchableOpacity>
           ),
           headerTitleStyle: {
-            fontFamily: "Petrona-Bold",
+            fontFamily: fonts.Petrona.bold,
             fontSize: 26,
             alignItems: "center",
             justifyContent: "center",
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
     borderRadius:6
   },
   editText:{
-    fontFamily:'Petrona-Medium',
+    fontFamily:fonts.Petrona.medium,
     fontSize:12,
     color:'#FFFFFF'
   }

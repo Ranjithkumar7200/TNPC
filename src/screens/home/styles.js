@@ -1,13 +1,12 @@
 import { StyleSheet } from "react-native";
-import { color } from "../../constants/Constants";
+import { color, fonts } from "../../constants/Constants";
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
       marginHorizontal: 20,
       display: "flex",
       flexDirection: "column",
-      fontFamily:'Petrona-Medium',
-      justifyContent:'space-around',
+      fontFamily:fonts.Petrona.medium,
       marginTop:50
     },
     headerContainer: {
@@ -17,7 +16,7 @@ export const styles = StyleSheet.create({
       alignItems: "center",
     },
     headerText: {
-      fontFamily: "IbarraRealNova-Bold",
+      fontFamily: fonts.IbarraRealNova.bold,
       color: "#000000",
       fontSize: 26,
     },
@@ -29,36 +28,41 @@ export const styles = StyleSheet.create({
       borderRadius: 16,
       borderColor: color.secondary,
       borderWidth: 1,
+      marginVertical:20
     },
   
     toggleGroupContainer: {
       display: "flex",
       flexDirection: "row",
-      fontFamily: "Petrona-SemiBold",
+      fontFamily: fonts.Petrona.semiBold,
       justifyContent: "space-between",
       alignItems: "center",
+      marginVertical:10,
     },
     toggleContainer: {
       display: "flex",
       flexDirection: "row",
-      fontFamily: "Petrona-SemiBold",
+      fontFamily:fonts.Petrona.semiBold,
       justifyContent: "space-around",
       alignItems: "center",
-      backgroundColor:color.primary,
+      backgroundColor:color.secondary,
       width: 160,
       height: 32,
       borderRadius: 15,
     },
     materialText: {
-      fontFamily: "Petrona-SemiBold",
+      fontFamily: fonts.Petrona.semiBold,
       fontSize: 8,
+      
     },
+ 
     mockText: {
-      fontFamily: "Petrona-SemiBold",
+      fontFamily: fonts.Petrona.semiBold,
       fontSize: 8,
+      
     },
     datesText: {
-      fontFamily: "Petrona-SemiBold",
+      fontFamily: fonts.Petrona.semiBold,
       fontSize: 8,
       color: "#FFFFFF",
     },
@@ -74,7 +78,7 @@ export const styles = StyleSheet.create({
     featureContainer: {
       display: "flex",
       flexDirection: "row",
-      fontFamily: "Petrona-SemiBold",
+      fontFamily: fonts.Petrona.semiBold,
       justifyContent: "space-around",
       alignItems: "center",
       flexWrap: "wrap",
@@ -93,7 +97,7 @@ export const styles = StyleSheet.create({
     pastText: {
       backgroundColor: "#FFFFFF",
       fontSize: 12,
-      fontFamily: "Petrona-Medium",
+      fontFamily:fonts.Petrona.medium,
     },
     book:{
       justifyContent:'center',
@@ -101,11 +105,50 @@ export const styles = StyleSheet.create({
       height:50,
       borderColor:color.secondary,
       borderWidth:1,
-      borderRadius:15
+      borderRadius:15,
+      marginVertical:20
     },
     bookText:{
       fontSize: 12,
-      fontFamily: "Petrona-Medium",
+      fontFamily: fonts.Petrona.medium,
+    },
+    button: {
+      width:80,
+      height:32,
+      borderRadius: 15,
+      alignItems:'center',
+      justifyContent:'center'
+    },
+    preliminary:{
+      alignItems:'center',
+      justifyContent:'space-evenly',
+      borderColor:color.secondary,
+      borderWidth:2,
+      height:132,
+      borderRadius:15
+    },
+    preliminaryText:{
+      fontFamily:fonts.Petrona.semiBold,
+      fontSize:14
+    },
+    btnGroup:{
+      flexDirection:'row',
+      alignItems:'center'
+    },
+    btn:{
+      marginHorizontal:20,
+      width:80,
+      height:30,
+      backgroundColor:color.secondary,
+      alignItems:'center',
+      justifyContent:'center',
+      borderRadius:8,
+
+    },
+    btnText:{
+      fontFamily:fonts.Petrona.medium,
+      fontSize:10,
+      color:color.primary
     }
   });
   

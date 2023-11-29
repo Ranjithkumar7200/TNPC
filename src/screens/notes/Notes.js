@@ -19,7 +19,7 @@ const Notes = () => {
                   {items.note.map((notes, index) => {
                     return (
                       <>
-                        <Text style={[styles.notesText, { colors }]} key={index}>
+                        <Text style={[styles.notesText, { color:colors }]} key={index}>
                           {index + 1 + " . " + notes}
                         </Text>
                       </>

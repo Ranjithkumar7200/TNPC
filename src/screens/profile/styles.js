@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { color } from "../../constants/Constants";
+import { color, fonts } from "../../constants/Constants";
 
 export const styles = StyleSheet.create({
     container: {
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
       justifyContent: "center",
     },
     profileText: {
-      fontFamily: "Petrona-Regular",
+      fontFamily: fonts.Petrona.regular,
       fontSize: 16,
       color: "#000000",
     },
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
       justifyContent: "space-evenly",
     },
     contactText: {
-      fontFamily: "Petrona-Regular",
+      fontFamily: fonts.Petrona.regular,
       fontSize: 10,
       color: "rgba(0, 0, 0, 0.56)",
       marginHorizontal: 4,
@@ -50,12 +50,12 @@ export const styles = StyleSheet.create({
       textAlign: "center",
     },
     mainText: {
-      fontFamily: "Petrona-Regular",
+      fontFamily: fonts.Petrona.regular,
       fontSize: 14,
       color: "#000000",
     },
     secondText: {
-      fontFamily: "Petrona-Regular",
+      fontFamily: fonts.Petrona.regular,
       fontSize: 14,
       color: "rgba(0, 0, 0, 0.56)",
     },
@@ -107,7 +107,7 @@ export const styles = StyleSheet.create({
       textAlign: "center",
     },
     logoutText: {
-      fontFamily: "Petrona-Medium",
+      fontFamily: fonts.Petrona.medium,
       fontSize: 14,
       color: "#ffffff",
     },

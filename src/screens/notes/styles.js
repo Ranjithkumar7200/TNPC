@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { screenWidth } from "../../constants/Constants";
+import { fonts, screenWidth } from "../../constants/Constants";
 export const styles = StyleSheet.create({
     scrollContainer: {
       flex: 1,
@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
       margin: 10,
     },
     notesText: {
-      fontFamily: "Petrona-Medium",
+      fontFamily:fonts.Petrona.medium,
       fontSize: 10,
     },
     iconContainer: {

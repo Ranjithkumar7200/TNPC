@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { fonts } from "../../constants/Constants";
 
 export const styles = StyleSheet.create({
     container: {
@@ -14,12 +15,12 @@ export const styles = StyleSheet.create({
     },
     filterText: {
       fontSize: 12,
-      fontFamily: "Petrona-Medium",
+      fontFamily: fonts.Petrona.medium,
       marginRight: 10,
     },
     dayText: {
       fontSize: 12,
-      fontFamily: "Petrona-Bold",
+      fontFamily: fonts.Petrona.bold,
     },
     history: {
       display: "flex",
@@ -40,7 +41,7 @@ export const styles = StyleSheet.create({
     },
     withdrawText: {
       fontSize: 10,
-      fontFamily: "Petrona-Regular",
+      fontFamily: fonts.Petrona.regular,
     },
     transationDetails: {
       marginVertical: 10,

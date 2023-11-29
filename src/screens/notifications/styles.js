@@ -1,5 +1,5 @@
 import {  StyleSheet } from "react-native";
-import { color, screenWidth } from "../../constants/Constants";
+import { color, fonts, screenWidth } from "../../constants/Constants";
 
 export const styles = StyleSheet.create({
     scrollContainer: {
@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
       marginVertical:10
     },
     notificationText: {
-      fontFamily: "Petrona-Medium",
+      fontFamily: fonts.Petrona.medium,
       fontSize: 10,
     },
   });

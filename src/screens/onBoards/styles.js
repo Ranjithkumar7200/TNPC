@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { color } from "../../constants/Constants";
+import { color, fonts } from "../../constants/Constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -53,7 +53,7 @@ export const styles = StyleSheet.create({
     fontSize: 30,
     color: color.primary,
     fontWeight: "bold",
-    fontFamily: "IbarraRealNova-Regular",
+    fontFamily:fonts.IbarraRealNova.regular,
     marginRight: 30,
   },
   descriptionContainer: {
@@ -63,11 +63,11 @@ export const styles = StyleSheet.create({
   },
   subTitle: {
     fontSize: 25,
-    fontFamily: "IbarraRealNova-Regular",
+    fontFamily: fonts.IbarraRealNova.regular,
   },
   description: {
     fontSize: 16,
-    fontFamily: "Petrona-Regular",
+    fontFamily: fonts.Petrona.regular,
     letterSpacing: 0.5,
     lineHeight: 30,
   },
