@@ -16,6 +16,7 @@ import * as SplashScreen from "expo-splash-screen";
 import Notes from "./src/screens/notes/Notes";
 import { Ionicons } from "@expo/vector-icons";
 import Notification from "./src/screens/notifications/Notification";
+import ImportantantDates from "./src/screens/importantDates/ImportantantDates";
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -104,6 +105,23 @@ export default function App() {
                   </View>
                 </TouchableOpacity>
               ),
+              headerTitleStyle: {
+                fontFamily: "Petrona-Bold",
+                fontSize: 26,
+                alignItems: "center",
+                justifyContent: "center",
+              },
+              headerStyle: {
+                backgroundColor: "#fff",
+              },
+            }}
+          />
+          <Stack.Screen
+            name="Important Dates"
+            component={ImportantantDates}
+            options={{
+              headerTitleAlign: "center",
+
               headerTitleStyle: {
                 fontFamily: "Petrona-Bold",
                 fontSize: 26,

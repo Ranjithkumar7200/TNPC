@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { color } from "../../constants/Constants";
 
 const styles = StyleSheet.create({
     container: {
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
       justifyContent: "space-between",
       borderRadius: 11,
       borderWidth: 2, // Stroke (border)
-      borderColor: "#E6E6FA", // Stroke color
+      borderColor: color.primary, // Stroke color
       backgroundColor: "#FFFFFF", // Fill color
       padding: 16,
     },
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
       width: 264,
       height: 35,
       paddingHorizontal: 15,
-      backgroundColor: "#E6E6FA",
+      backgroundColor:color.secondary,
       borderRadius: 6,
     },
     labelInput: {
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     button: {
       width: 264,
       height: 35,
-      backgroundColor: "#8A2BE2",
+      backgroundColor: color.primary,
       borderRadius: 6,
       alignItems: "center",
       justifyContent: "center",
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
       height: 35,
       borderRadius:6,
       borderWidth: 2,
-      borderColor: "#8A2BE2",
+      borderColor: color.primary,
       alignItems:"center",
       justifyContent:'center'
     },

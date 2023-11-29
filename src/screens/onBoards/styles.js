@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { color } from "../../constants/Constants";
 
 export const styles = StyleSheet.create({
   container: {
@@ -12,7 +13,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   button: {
-    backgroundColor: "#8A2BE2",
+    backgroundColor: color.primary,
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 8,
@@ -37,7 +38,7 @@ export const styles = StyleSheet.create({
   },
   skipText: {
     fontSize: 16,
-    color: "#8A2BE2",
+    color: color.primary,
     fontWeight: "bold",
   },
   titleContainer: {
@@ -50,7 +51,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 30,
-    color: "#8A2BE2",
+    color: color.primary,
     fontWeight: "bold",
     fontFamily: "IbarraRealNova-Regular",
     marginRight: 30,

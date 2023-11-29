@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { color } from "../../constants/Constants";
 
 export const styles = StyleSheet.create({
     container: {
@@ -44,7 +45,7 @@ export const styles = StyleSheet.create({
       width: 315,
       height: 50,
       borderRadius: 11,
-      borderColor: "#E6E6FA",
+      borderColor:color.secondary,
       borderWidth: 2,
       textAlign: "center",
     },
@@ -65,7 +66,7 @@ export const styles = StyleSheet.create({
       alignItems: "center",
     },
     icon: {
-      backgroundColor: "#E6E6FA",
+      backgroundColor: color.secondary,
       width: 30,
       height: 25.862,
       alignItems: "center",
@@ -89,7 +90,7 @@ export const styles = StyleSheet.create({
       width: 143,
       height: 50,
       borderRadius: 11,
-      borderColor: "#E6E6FA",
+      borderColor: color.secondary,
       borderWidth: 2,
       textAlign: "center",
     },
@@ -102,7 +103,7 @@ export const styles = StyleSheet.create({
       width: 315,
       height: 50,
       borderRadius: 11,
-      backgroundColor: "#8A2BE2",
+      backgroundColor: color.primary,
       textAlign: "center",
     },
     logoutText: {

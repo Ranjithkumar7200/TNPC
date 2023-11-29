@@ -3,6 +3,7 @@ import React from "react";
 import { ScrollView,Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { styles } from "./styles";
+import { color } from "../../constants/Constants";
 
 const Transaction = () => {
   return (
@@ -10,7 +11,7 @@ const Transaction = () => {
       <TouchableOpacity>
         <View style={styles.filter}>
           <Text style={styles.filterText}>Filter</Text>
-          <AntDesign name="filter" size={12} color="#8A2BE2" />
+          <AntDesign name="filter" size={12} color={color.primary} />
         </View>
       </TouchableOpacity>
 

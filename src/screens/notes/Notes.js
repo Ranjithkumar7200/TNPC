@@ -3,14 +3,15 @@ import React from "react";
 import { styles } from "./styles";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { notesData } from "./notesData";
+import { color } from "../../constants/Constants";
 const Notes = () => {
   return (
     <ScrollView style={styles.scrollContainer}>
       <View style={styles.container}>
         {notesData.map((items, outerIndex) => {
           const isEvenIndex = outerIndex % 2 === 0;
-          const backgroundColor = isEvenIndex ? "#E6E6FA" : "#8A2BE2";
-          const color = isEvenIndex ? "#8A2BE2" : "#E6E6FA";
+          const backgroundColor = isEvenIndex ? color.secondary : color.primary;
+          const colors = isEvenIndex ? color.primary : color.secondary;
           return (
             <>
               <View style={[styles.notes, { backgroundColor }]} key={outerIndex}>
@@ -18,7 +19,7 @@ const Notes = () => {
                   {items.note.map((notes, index) => {
                     return (
                       <>
-                        <Text style={[styles.notesText, { color }]} key={index}>
+                        <Text style={[styles.notesText, { colors }]} key={index}>
                           {index + 1 + " . " + notes}
                         </Text>
                       </>

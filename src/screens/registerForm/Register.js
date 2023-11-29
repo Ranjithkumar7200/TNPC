@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import styles from "./styles";
 import { Formik } from "formik";
 import { RegisterSchema } from "./RegisterSchema";
+import { color } from "../../constants/Constants";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -54,7 +55,7 @@ const Register = () => {
                 <View style={styles.labelInput}>
                   <TextInput
                     style={styles.input}
-                    cursorColor={"#8A2BE2"}
+                    cursorColor={color.primary}
                     onChangeText={(text) => {
                       handleChange("email")(text);
                       setEmail(text);
@@ -80,7 +81,7 @@ const Register = () => {
                       setPassword(text);
                     }}
                     onBlur={handleBlur("password")}
-                    cursorColor={"#8A2BE2"}
+                    cursorColor={color.primary}
                   />
                   <TouchableOpacity onPress={togglePasswordVisibility}>
                     <View style={styles.toggleButton}>
@@ -88,12 +89,12 @@ const Register = () => {
                         {!showPassword ? (
                           <MaterialIcons
                             size={13}
-                            color={"#8A2BE2"}
+                            color={color.primary}
                             name="visibility"
                           />
                         ) : (
                           <MaterialIcons
-                            color={"#8A2BE2"}
+                            color={color.primary}
                             size={13}
                             name="visibility-off"
                           />
@@ -126,7 +127,7 @@ const Register = () => {
                       setConfirmPassword(text);
                     }}
                     onBlur={handleBlur("confirmPassword")}
-                    cursorColor={"#8A2BE2"}
+                    cursorColor={color.primary}
                   />
                   <TouchableOpacity onPress={toggleConfirmPasswordVisibility}>
                     <View style={styles.toggleButton}>
@@ -134,12 +135,12 @@ const Register = () => {
                         {!showConfirmPassword ? (
                           <MaterialIcons
                             size={13}
-                            color={"#8A2BE2"}
+                            color={color.primary}
                             name="visibility"
                           />
                         ) : (
                           <MaterialIcons
-                            color={"#8A2BE2"}
+                            color={color.primary}
                             size={13}
                             name="visibility-off"
                           />
@@ -189,7 +190,7 @@ const Register = () => {
               Already have an account?
               <Text
                 onPress={() => navigation.navigate("Login")}
-                style={{ color: "#8A2BE2" }}
+                style={{ color: color.primary }}
               >
                 {" "}
                 Go to Login

@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-
+import { color } from "../../constants/Constants";
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     carousel: {
       overflow: "hidden",
       borderRadius: 16,
-      borderColor: "#E6E6FA",
+      borderColor: color.secondary,
       borderWidth: 1,
     },
   
@@ -44,7 +44,7 @@ export const styles = StyleSheet.create({
       fontFamily: "Petrona-SemiBold",
       justifyContent: "space-around",
       alignItems: "center",
-      backgroundColor: "#E6E6FA",
+      backgroundColor:color.primary,
       width: 160,
       height: 32,
       borderRadius: 15,
@@ -65,7 +65,7 @@ export const styles = StyleSheet.create({
     importantDateContainer: {
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: "#8A2BE2",
+      backgroundColor: color.primary,
       width: 160,
       height: 32,
       borderRadius: 15,
@@ -82,7 +82,7 @@ export const styles = StyleSheet.create({
     pastContainer: {
       width:150,
       height: 50,
-      borderColor: "#E6E6FA",
+      borderColor: color.secondary,
       borderWidth: 1,
       justifyContent: "center",
       alignItems: "center",
@@ -99,7 +99,7 @@ export const styles = StyleSheet.create({
       justifyContent:'center',
       alignItems:'center',
       height:50,
-      borderColor:'#E6E6FA',
+      borderColor:color.secondary,
       borderWidth:1,
       borderRadius:15
     },

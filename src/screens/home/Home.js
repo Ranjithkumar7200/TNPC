@@ -60,9 +60,11 @@ const Home = () => {
             <Text style={styles.mockText}>Mock Test</Text>
           </View>
         </View>
+        <TouchableOpacity onPress={()=>navigate.navigate("Important Dates")}>
         <View style={styles.importantDateContainer}>
           <Text style={styles.datesText}>TNPSC Important Dates</Text>
         </View>
+        </TouchableOpacity>
       </View>
       <View style={styles.featureContainer}>
         <TouchableOpacity>

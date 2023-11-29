@@ -6,7 +6,7 @@ import Profile from "../profile/Profile";
 import Transaction from "../transaction/Transaction";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
+import {color} from '../../constants/Constants'
 const BottomTabs = () => {
   const Tab = createBottomTabNavigator();
   const navigation = useNavigation();
@@ -16,7 +16,7 @@ const BottomTabs = () => {
         backgroundColor: "#fff",
       }}
       screenOptions={{
-        tabBarActiveTintColor: "#8A2BE2",
+        tabBarActiveTintColor: color.primary,
         tabBarInactiveTintColor: "gray",
         tabBarShowLabel: false,
         tabBarStyle: [
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
   edit:{
     width:47,
     height:26,
-    backgroundColor:'#8A2BE2',
+    backgroundColor:color.primary,
     alignItems:'center',
     justifyContent:'center',
     marginHorizontal:20,
