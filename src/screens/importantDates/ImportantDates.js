@@ -3,7 +3,7 @@ import React from "react";
 import {  ScrollView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { styles } from "./styles";
-const ImportantantDates = () => {
+const ImportantDates = () => {
   return (
     <ScrollView style={styles.scrollviewContainer}>
       <View style={styles.container}>
@@ -140,4 +140,4 @@ const ImportantantDates = () => {
 
 
 
-export default ImportantantDates;
+export default ImportantDates;

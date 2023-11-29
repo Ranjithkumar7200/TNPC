@@ -6,32 +6,40 @@ import Carousel from "react-native-reanimated-carousel";
 import { data } from "./data";
 import { useNavigation } from "@react-navigation/native";
 import { color } from "../../constants/Constants";
+import PastyearModel from "../models/PastyearModel";
 
 const Home = () => {
   const navigate = useNavigation();
-  const [toggle,setToggle] = useState(false);
+  const [toggle, setToggle] = useState(false);
   const [backgroundColor1, setBackgroundColor1] = useState(color.primary);
   const [backgroundColor2, setBackgroundColor2] = useState(color.secondary);
   const [color1, setColor1] = useState(color.secondary);
   const [color2, setColor2] = useState(color.primary);
+  const [visible, setVisible] = useState(false);
+
+  const showModal = () => {
+    setVisible(true);
+  };
+  const hideModal = () => {
+    setVisible(false);
+  };
 
   const handlePress1 = () => {
-    setToggle(false)
+    setToggle(false);
     setBackgroundColor1(color.primary);
     setBackgroundColor2(color.secondary);
-    setColor1(color.secondary)
-    setColor2(color.primary)
-    
+    setColor1(color.secondary);
+    setColor2(color.primary);
   };
   const handlePress2 = () => {
-    setToggle(true)
+    setToggle(true);
     setBackgroundColor2(color.primary);
     setBackgroundColor1(color.secondary);
-    setColor1(color.primary)
-    setColor2(color.secondary)
-    
+    setColor1(color.primary);
+    setColor2(color.secondary);
   };
   return (
+    <>
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <TouchableOpacity onPress={() => navigate.navigate("Notes")}>
@@ -76,10 +84,12 @@ const Home = () => {
         <View style={styles.toggleContainer}>
           <TouchableOpacity
             onPress={handlePress1}
-            style={[styles.button, { backgroundColor: backgroundColor1}]}
+            style={[styles.button, { backgroundColor: backgroundColor1 }]}
           >
             <View style={styles.touchable}>
-              <Text style={[styles.materialText,{color:color1}]}>Study Materials</Text>
+              <Text style={[styles.materialText, { color: color1 }]}>
+                Study Materials
+              </Text>
             </View>
           </TouchableOpacity>
 
@@ -88,7 +98,9 @@ const Home = () => {
             style={[styles.button, { backgroundColor: backgroundColor2 }]}
           >
             <View>
-              <Text style={[styles.mockText,{color:color2}]}>Mock Test</Text>
+              <Text style={[styles.mockText, { color: color2 }]}>
+                Mock Test
+              </Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -98,93 +110,92 @@ const Home = () => {
           </View>
         </TouchableOpacity>
       </View>
-     <View>
-      {
-        !toggle ? (<>
-         <View style={styles.featureContainer}>
-        <TouchableOpacity>
-          <View style={styles.pastContainer}>
-            <Text style={styles.pastText}>Past Year Questions</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={styles.pastContainer}>
-            <Text style={styles.pastText}>Model Questions</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={styles.pastContainer}>
-            <Text style={styles.pastText}>Current Affairs</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={styles.pastContainer}>
-            <Text style={styles.pastText}>Aptitude</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={styles.pastContainer}>
-            <Text style={styles.pastText}>New School Books</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={styles.pastContainer}>
-            <Text style={styles.pastText}>Old School Books</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
       <View>
-        <TouchableOpacity>
-          <View style={styles.book}>
-            <Text style={styles.bookText}>Past Book Store</Text>
-          </View>
-        </TouchableOpacity>
+        {!toggle ? (
+          <>
+            <View style={styles.featureContainer}>
+              <TouchableOpacity onPress={showModal}>
+                <View style={styles.pastContainer}>
+                  <Text style={styles.pastText}>Past Year Questions</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.pastContainer}>
+                  <Text style={styles.pastText}>Model Questions</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.pastContainer}>
+                  <Text style={styles.pastText}>Current Affairs</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.pastContainer}>
+                  <Text style={styles.pastText}>Aptitude</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.pastContainer}>
+                  <Text style={styles.pastText}>New School Books</Text>
+                </View>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <View style={styles.pastContainer}>
+                  <Text style={styles.pastText}>Old School Books</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <View>
+              <TouchableOpacity>
+                <View style={styles.book}>
+                  <Text style={styles.bookText}>Past Book Store</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </>
+        ) : (
+          <>
+            <View>
+              <View style={styles.mock}>
+                <TouchableOpacity>
+                  <View style={styles.book}>
+                    <Text style={styles.bookText}>Topic Wise Test</Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.mock}>
+                <TouchableOpacity>
+                  <View style={styles.book}>
+                    <Text style={styles.bookText}>Custom Test</Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.preliminary}>
+                <View>
+                  <Text style={styles.preliminaryText}>
+                    Preliminary Full Tests
+                  </Text>
+                </View>
+                <View style={styles.btnGroup}>
+                  <TouchableOpacity>
+                    <View style={styles.btn}>
+                      <Text style={styles.btnText}>Group1</Text>
+                    </View>
+                  </TouchableOpacity>
+                  <TouchableOpacity>
+                    <View style={styles.btn}>
+                      <Text style={styles.btnText}>Group4</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+          </>
+        )}
       </View>
-        </>) :(<>
-        <View >
-        <View style={styles.mock}>
-        <TouchableOpacity>
-          <View style={styles.book}>
-            <Text style={styles.bookText}>Topic Wise Test</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.mock}>
-        <TouchableOpacity>
-          <View style={styles.book}>
-            <Text style={styles.bookText}>Custom Test</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.preliminary}>
-        <View>
-          <Text style={styles.preliminaryText}>
-            Preliminary Full Tests
-          </Text>
-        </View>
-        <View style={styles.btnGroup}>
-          <TouchableOpacity>
-            <View style={styles.btn}>
-            <Text style={styles.btnText}>
-            Group1
-            </Text>
-          </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-          <View style={styles.btn}>
-            <Text style={styles.btnText}>
-            Group4
-            </Text>
-          </View>
-          </TouchableOpacity>
-        </View>
-      </View>
-      
-        </View>
-        </>)
-      }
-     </View>
     </View>
+    <PastyearModel visible={visible} hideModal={hideModal}/>
+    </>
   );
 };
 
